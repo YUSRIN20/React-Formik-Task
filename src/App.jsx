@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
-import Canvas from './Components/Canvas';
 import Edit from './Components/Edit';
 import Create from './Components/Create';
 import { ToastContainer } from 'react-toastify';
