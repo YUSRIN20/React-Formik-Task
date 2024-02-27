@@ -24,9 +24,9 @@ const Create = () => {
             .required('Book Author Name is Required'),
         book_publish_year:string()
             .matches(/(?:[0-9]{4})?[0-9]{4}/, "Invalid Year")
-            .required('book_publish_year is Required'),
+            .required('Book Published Year is Required'),
         book_publisher:string()
-            .required('book_publisher is Required'),
+            .required('Book Publisher is Required'),
         book_isbn:string()
             // .matches(` ^(([1-9]*)|(([1-9]*).([0-9]*)))$`,"ISBN Number is Invalid")
             .min(13, `ISBN-NUMBER must be
