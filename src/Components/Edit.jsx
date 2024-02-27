@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import './Style/Edit.css'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import * as Yup from 'Yup'
-import * as Yup from 'Yup'
+// import * as yup from 'yup'
+import {string,object }from 'yup'
 import { useFormik } from 'formik';
 
 
@@ -40,22 +40,22 @@ const Edit = ({ id }) => {
         formik.setValues(editBooks) //it defines storing the formik values setValues() =>this set values is default function
     }, [editBooks])
 
-    const validationSchema = Yup.object().shape({
-        book_title: Yup.string()
+    const validationSchema = object().shape({
+        book_title:string()
         .required('Book Title is Required'),//this errors stores in formik.errors.book_title
-        book_author: Yup.string()
+        book_author:string()
         .required('Book Author Name is Required'),
-        book_publish_year: Yup.string()
+        book_publish_year:string()
         .matches(/(?:[0-9]{4})?[0-9]{4}/,"Invalid Year")
         .required('book_publish_year is Required'),
-        book_publisher: Yup.string()
+        book_publisher:string()
         .required('book_publisher is Required'),
-        book_isbn: Yup.string()
+        book_isbn:string()
         // .matches(` ^(([1-9]*)|(([1-9]*).([0-9]*)))$`,"ISBN Number is Invalid")
         .min(13,'ISBN-NUMBER must be atmost 13 digits ')
         .max(13,'ISBN-NUMBER must be atmost 13 digits ')
         .required('ISBN-NUMBER is Required'),
-        book_description: Yup.string()
+        book_description:string()
         .min(100,'Give a detail description')
 
     })
